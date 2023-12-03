@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fill The Details</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+
+  </style>
+</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='cssstyle.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<body>
+
+  <div class="navbar">
+    <a href="/" style="font-size: larger;"><i class="fa fa-home"
+            style="font-size:36px"></i><b> &nbsp Home</b></a>
+    <a href="/predict"><b>Prediction</b></a>
+    <a href="/about"><b>About us</b></a>
+</div>
+
+  <div class="container">
+    <div class="form-container">
+      <h2 class="mb-4">
+        <h1 style="text-align:center;">Fill The Details
+      </h2>
+
+      <form class="form" action="/predict" method="POST">
+        <label>Age years:</label><br>
+        <input type="number" name="Age" class="form-control"><br><br>
+    
+        <label>mothers education (numeric: 0-none, 1-primary education (4th grade), 2-5th to
+          9th grade, 3-secondary education or 4-higher education)</label>
+        <input type="number" name="Medu" class="form-control"><br><br>
+    
+        <label>fathers education(numeric: 0 - none, 1 - primary education (4th grade), 2 - 5th to 9th
+          grade, 3 - secondary education or 4 - higher education)</label>
+        <input type="number" name="Fedu" class="form-control"><br><br>
+    
+        <label>Home to school travel time (numeric: 1 - <15 min., 2 - 15 - 30 min., 3 - 30 min - 1 hour, or 4 - >1 hour)</label>
+        <input type="number" name="traveltime" class="form-control"><br><br>
+
+        <label>weekly study time (numeric: 1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours)</label>
+          <input type="number" name="studytime" class="form-control"><br><br>
+    
+        <label>number of past class failures (numeric: n if 1 =<n> 3, else 4)</label>
+          <input type="number" name="failures" class="form-control"><br><br>
+        
+        <label>going out with friends (numeric: from 1 - very low to 5 - very high)</label>
+          <input type="number" name="goout" class="form-control"><br><br>
+
+        <label>workday alcohol consumption (numeric: from 1 - very low to 5 - very high)</label>
+          <input type="number" name="Dalc" class="form-control"><br><br>
+
+        <label>weekend alcohol consumption (numeric: from 1 - very low to 5 - very high)</label>
+          <input type="number" name="Walc" class="form-control"><br><br>
+
+        <label>number of school absences (numeric: from 0 to 93)</label>
+          <input type="number" name="absences" class="form-control"><br><br>
+
+        <label>school_LVA (True/False)</label>
+          <input type="text" name="school_LVA" class="form-control"><br><br>
+
+        <label>school_MS (True/False)</label>
+          <input type="text" name="school_MS" class="form-control"><br><br>
+
+        <label>address_U (True/False)</label>
+          <input type="text" name="address_U" class="form-control"><br><br>
+
+        <label>Mjob_health (True/False)</label>
+          <input type="text" name="Mjob_health" class="form-control"><br><br>
+
+        <label>Mjob_teacher (True/False)</label>
+          <input type="text" name="Mjob_teacher" class="form-control"><br><br>
+
+        <label>Fjob_teacher (True/False)</label>
+          <input type="text" name="Fjob_teacher" class="form-control"><br><br>
+
+        <label>reason_reputation (True/False)</label>
+          <input type="text" name="reason_reputation" class="form-control"><br><br>
+
+        <label>schoolsup_yes (True/False)</label>
+          <input type="text" name="schoolsup_yes" class="form-control"><br><br>
+
+        <label>higher_yes (True/False)</label>
+          <input type="text" name="higher_yes" class="form-control"><br><br>
+
+        <label>internet_yes (True/False)</label>
+          <input type="text" name="internet_yes" class="form-control"><br><br>
+        
+        <label>G1 (Grade from 3 - 19)</label>
+          <input type="number" name="G1" class="form-control"><br><br>
+
+        <button type="submit" value="Predict" class="btn btn-block btn-success">predict</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
